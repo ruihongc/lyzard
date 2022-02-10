@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="../lyzard.ico"/>
+
+        <script src="codemirror-5.63.3/lib/codemirror.js"></script>
+        <script src="codemirror-5.63.3/mode/python/python.js"></script>
+        <link rel="stylesheet" href="codemirror-5.63.3/theme/monokai.css"/>
+        <link rel="stylesheet" href="codemirror-5.63.3/lib/codemirror.css"/>
+
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Lyzard</title>
+        <div class="d-none" id="placeholderDiv">
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+            <div class="d-none"></div>
+        </div>
+    </head>
+    <body>
+        <div class="container-fluid vh-100">
+            <div class="row h-100" id="masterRow">
+                <div class="col-md-7 d-flex flex-column h-100 codeEditorDiv" id="editorBox">
+                    <div class="row flex-grow-1 overflow-hidden">
+                        <textarea id="editor" name="editor"></textarea>
+                    </div>
+                    
+                    <div class="row p-2 bg-white">
+                        <div class="col-md-5">
+                            <div class="btn-group" id="mainButton">
+                                <button type="button" class="btn btn-danger shadow-none" onclick="processNextLine()" style="width: 120px; color: black; background-color: #F9D1D1; border-color: #F9D1D1;">Next Line</button>
+                                <button type="button" class="btn btn-danger shadow-none dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" style="color: black; background-color: #F9D1D1; border-color: #F9D1D1;">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button onclick="selNextLine()" class="dropdown-item active" type="button">Next Line</button>
+                                    <button onclick="selAllLine()" class="dropdown-item" type="button">Run All Lines</button>
+                                    <button onclick="selReset()" class="dropdown-item" type="button">Reset</button>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <input id="runAllDelay" name="runAllDelay" type="text" placeholder="Delay" maxlength=4 class="d-none" style="width: 60px; text-align: center;">
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="text-align: center;display: table;">
+                            <span style="display: table-cell; vertical-align: middle;font-weight: bold;">Lyzard</span>
+                        </div>
+                        <div class="col-md-5" style="text-align: right;">
+                            <button onclick="openFile()" type="button" class="btn btn-secondary shadow-none" style="background-color: #165BAA; border-color: #165BAA;">Open File</button>
+                            <input id="fileInput" name="fileInput" type="file" accept=".txt,.py" style="display: none">
+                        </div>
+                    </div>
+
+                    <!--<button onclick="processNextLine()" type="button" class="btn btn-primary mt-3">Next Line</button>
+                    <button id="runAllButton" onclick="runAllLines()" type="button" class="btn btn-secondary mt-3">Run All Lines</button>
+                    <input id="runAllDelay" name="runAllDelay" type="text" placeholder="Delay (in ms)" maxlength=4 class="m-1">
+                    <button id="stopAllButton" onclick="stopRunAll()" type="button" class="btn btn-danger mt-3" disabled>Stop Running</button>
+                    <button onclick="resetFunc()" type="button" class="btn btn-warning mt-3">Reset</button>-->
+                </div>
+                <div class="col-md-5 h-100 d-flex flex-column">
+                    <div class="row overflow-hidden h-25 codeEditorDiv">
+                        <textarea id="terminal" name="terminal"></textarea>
+                    </div>
+                    <div class="row h-75 d-flex flex-column flex-nowrap" id="varBox"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

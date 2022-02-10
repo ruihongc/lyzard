@@ -1,0 +1,60 @@
+#varBox {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.bigVarHolder {
+    overflow-y: visible;
+    overflow-x: visible;
+    width: 100%;
+}
+
+.varItem {
+    width: 100%;
+}
+
+.varVal {
+    width: 100%;
+    text-align: center;
+    padding: .25rem;
+    border: 3px solid black;
+    border-radius: 0.2rem;
+}
+
+.arrIndex {
+    width: 100%;
+    text-align: center;
+}
+
+.varName {
+    text-align: right;
+}
+
+.highLine {
+    background-color: yellow;
+    opacity: 0.2;
+}
+
+.accessed {
+    border-color: blue;
+}
+
+.modified {
+    border-color: orange;
+}
+
+.new {
+    border-color: green;
+}
+
+.usefulVar {
+    opacity: 1;
+}
+
+.uselessVar {
+    opacity: 0.3;
+}
+
+.uselessVar:hover {
+    opacity: 1;
+}
